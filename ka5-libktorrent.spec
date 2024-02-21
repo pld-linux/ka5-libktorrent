@@ -1,42 +1,42 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.4
+%define		kdeappsver	24.01.95
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libktorrent
 Summary:	ktorrent library
 Summary(pl.UTF-8):	biblioteka ktorrent
 Name:		ka5-%{kaname}
-Version:	23.08.4
-Release:	1
+Version:	24.01.95
+Release:	0.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	de2cf6718265d27052004d4cab94bc20
+Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	fe7cce32222342dfd7f20a73af971343
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel >= %{qtver}
-BuildRequires:	Qt5Network-devel >= %{qtver}
-BuildRequires:	Qt5Test-devel >= %{qtver}
-BuildRequires:	Qt5Xml-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6Network-devel >= %{qtver}
+BuildRequires:	Qt6Test-devel >= %{qtver}
+BuildRequires:	Qt6Xml-devel >= %{qtver}
 BuildRequires:	boost-devel >= 1.34.0
 BuildRequires:	gettext-devel
 BuildRequires:	gmp-devel >= 6.0.0
-BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf5-karchive-devel >= %{kframever}
-BuildRequires:	kf5-kauth-devel >= %{kframever}
-BuildRequires:	kf5-kbookmarks-devel >= %{kframever}
-BuildRequires:	kf5-kcodecs-devel >= %{kframever}
-BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
-BuildRequires:	kf5-kcrash-devel >= %{kframever}
-BuildRequires:	kf5-ki18n-devel >= %{kframever}
-BuildRequires:	kf5-kio-devel >= %{kframever}
-BuildRequires:	kf5-kjobwidgets-devel >= %{kframever}
-BuildRequires:	kf5-kservice-devel >= %{kframever}
-BuildRequires:	kf5-solid-devel >= %{kframever}
+BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf6-karchive-devel >= %{kframever}
+BuildRequires:	kf6-kauth-devel >= %{kframever}
+BuildRequires:	kf6-kbookmarks-devel >= %{kframever}
+BuildRequires:	kf6-kcodecs-devel >= %{kframever}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf6-kcrash-devel >= %{kframever}
+BuildRequires:	kf6-ki18n-devel >= %{kframever}
+BuildRequires:	kf6-kio-devel >= %{kframever}
+BuildRequires:	kf6-kjobwidgets-devel >= %{kframever}
+BuildRequires:	kf6-kservice-devel >= %{kframever}
+BuildRequires:	kf6-solid-devel >= %{kframever}
 BuildRequires:	libgcrypt-devel >= 1.4.5
-BuildRequires:	qca-qt5-devel
+BuildRequires:	qca-qt6-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
@@ -91,11 +91,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libKF5Torrent.so.*.*.*
-%ghost %{_libdir}/libKF5Torrent.so.6
+%attr(755,root,root) %{_libdir}/libKTorrent6.so.*.*
+%ghost %{_libdir}/libKTorrent6.so.6
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/libktorrent
-%{_libdir}/cmake/KF5Torrent
-%{_libdir}/libKF5Torrent.so
+%{_includedir}/KF6/libktorrent
+%{_libdir}/cmake/KTorrent6
+%{_libdir}/libKTorrent6.so
